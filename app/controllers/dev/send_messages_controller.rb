@@ -3,7 +3,7 @@ class Dev::SendMessagesController < ApplicationController
     # List all messages
     @messages = SendMessage.all
     render json: @messages,
-      only: %i[id to_number message callback_url]
+           only: %i[id to_number message callback_url]
   end
 
   def provider_one
@@ -15,11 +15,10 @@ class Dev::SendMessagesController < ApplicationController
     @new_message = SendMessage.create(to_number:, message:, callback_url:)
 
     if @new_message.save?
-        render json: { message: "Return an id"}
+      render json: { message: 'Return an id' }
     else
-        render json: { message: "There is an error. Check again"}
+      render json: { message: 'There is an error. Check again' }
     end
-
   end
 
   private
