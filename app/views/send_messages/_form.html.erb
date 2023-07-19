@@ -1,0 +1,17 @@
+<%= form_with(model: send_message) do |form| %>
+  <% if send_message.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(send_message.errors.count, "error") %> prohibited this send_message from being saved:</h2>
+
+      <ul>
+        <% send_message.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

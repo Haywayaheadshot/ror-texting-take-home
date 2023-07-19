@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  namespace :dev do
+    resources :send_messages
+
+    # API endpoint for posting to provider 1
+    post "dev/provider1", to: "dev/send_messages#provider_one"
+  end
 end
