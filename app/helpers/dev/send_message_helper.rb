@@ -1,0 +1,2 @@
+module Dev::SendMessageHelper
+end
