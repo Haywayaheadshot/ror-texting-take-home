@@ -74,3 +74,12 @@ end
 # Handle rubocop
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Handle UUid
+gem 'uuid'
+
+# Tailwind Gem
+gem 'tailwindcss-rails', '~> 2.0'
+
+# Rak cors
+gem 'rack-cors'
