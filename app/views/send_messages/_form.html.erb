@@ -1,17 +1,15 @@
-<%= form_with(model: send_message) do |form| %>
-  <% if send_message.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(send_message.errors.count, "error") %> prohibited this send_message from being saved:</h2>
-
-      <ul>
-        <% send_message.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= form_with(model: @send_message, url: create_messages_path ) do |form| %>
+  <div class="flex flex-col gap-3">
+    <div class="flex flex-col">
+      <%= form.label :number, class: "" %>
+      <%= form.number_field :number, placeholder: 'e.g 203-234-1234', class: "rounded-md" %>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.submit %>
+    <div class="flex flex-col">
+      <%= form.label :message, class: "" %>
+      <%= form.text_field :message, placeholder: 'Please place your message here!', class: "h-[30vh] rounded-md", dir: 'ltr' %>
+    </div>
+    <div class="bg-green-500 w-fit text-[#fff] px-2 py-2">
+      <%= form.submit "Send Message" %>
+    </div>
   </div>
 <% end %>
