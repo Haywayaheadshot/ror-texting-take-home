@@ -20,11 +20,7 @@ class SendMessagesController < ApplicationController
       message:,
       callback_url: 'https://f3d6-197-251-147-157.ngrok-free.app/delivery_status'
     }
-
-    # Determine which provider to use based on the weighting
     provider_url = weighted_provider_url
-
-    # Make the request to the external service (Provider 1 or Provider 2)
     attempt = make_request_to_provider(MAIN_URL + provider_url, payload)
 
     code_status = JSON.parse(attempt[:code])
