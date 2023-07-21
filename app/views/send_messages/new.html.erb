@@ -1,4 +1,4 @@
-<section class='flex flex-col w-[80vw] gap-5'>
+<section class='flex flex-col w-[80vw] gap-5 desktop:max-w-[40vw]'>
   <h1 class="text-2xl">Send a Text Message</h1>
 
   <%= render "form", send_message: @send_message %>
@@ -6,6 +6,16 @@
   <br>
 
   <div class="bg-red-500 w-fit text-[#fff] px-2 py-2">
-    <%= button_to "Clear All Inputs" %>
+    <%= button_to "Clear All Inputs", "#", id: "clearInputsButton" %>
   </div>
 </section>
+
+<script>
+  document.getElementById('clearInputsButton').addEventListener('click', function() {
+    const formInputs = document.querySelectorAll('form input, form textarea');
+
+    formInputs.forEach(input => {
+      input.value = '';
+    });
+  });
+</script>
