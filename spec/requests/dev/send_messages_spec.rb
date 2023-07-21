@@ -3,7 +3,7 @@ require 'json'
 
 RSpec.describe Dev::SendMessagesController, type: :request do
   describe 'POST #provider_one' do
-    url = 'https://e8cc-197-251-147-157.ngrok-free.app/'
+    url = 'https://27c2-197-251-147-157.ngrok-free.app'
 
     it 'creates a message using Provider 1 and checks its status' do
       # Prepare the payload for the provider_one action

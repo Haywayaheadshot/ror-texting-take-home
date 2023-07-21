@@ -27,6 +27,6 @@ module RorTextingTakeHome
           credentials: false
       end
     end
-    config.hosts << "e8cc-197-251-147-157.ngrok-free.app"
+    config.hosts << "27c2-197-251-147-157.ngrok-free.app"
   end
 end

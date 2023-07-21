@@ -18,7 +18,7 @@ class Dev::SendMessagesController < ApplicationController
     payload = {
       to_number:,
       message:,
-      callback_url: 'https://e8cc-197-251-147-157.ngrok-free.app/delivery_status'
+      callback_url: 'https://27c2-197-251-147-157.ngrok-free.app/delivery_status'
     }
 
     # Determine which provider to use based on the weighting

@@ -16,7 +16,7 @@ This API does not require authentication for message sending and status retrieva
 
 ### 1. Send Message - Provider One
 
-**Endpoint:** `POST /provider_one`
+**Endpoint:** `POST /provider1`
 
 **Description:** Sends an SMS message using both Providers.
 
@@ -40,7 +40,7 @@ If the operation fails, the response will contain an appropriate error message.
 
 ### 2. Find Message Status
 
-**Endpoint:** `GET /find_message_status`
+**Endpoint:** `GET /check_attempt_status`
 
 **Description:** Retrieves the status of a previously sent message.
 
