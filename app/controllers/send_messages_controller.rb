@@ -18,7 +18,7 @@ class SendMessagesController < ApplicationController
     payload = {
       to_number:,
       message:,
-      callback_url: 'https://f3d6-197-251-147-157.ngrok-free.app/delivery_status'
+      callback_url: 'https://e8cc-197-251-147-157.ngrok-free.app/delivery_status'
     }
     provider_url = weighted_provider_url
     attempt = make_request_to_provider(MAIN_URL + provider_url, payload)
