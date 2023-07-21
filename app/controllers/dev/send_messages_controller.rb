@@ -56,7 +56,7 @@ class Dev::SendMessagesController < ApplicationController
     message = SendMessage.find_by(message_id:)
 
     render json: message,
-    only: %i[id to_number message attempt_status message_id uuid]
+           only: %i[id to_number message attempt_status message_id uuid]
   end
 
   def delivery_status
