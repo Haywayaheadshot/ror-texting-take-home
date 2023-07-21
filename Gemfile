@@ -83,3 +83,6 @@ gem 'tailwindcss-rails', '~> 2.0'
 
 # Rak cors
 gem 'rack-cors'
+
+# For testing
+gem 'rspec-rails'
