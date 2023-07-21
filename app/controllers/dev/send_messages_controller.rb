@@ -18,7 +18,7 @@ class Dev::SendMessagesController < ApplicationController
     payload = {
       to_number:,
       message:,
-      callback_url: 'https://7411-197-251-147-157.ngrok-free.app/delivery_status'
+      callback_url: 'https://27c2-197-251-147-157.ngrok-free.app/delivery_status'
     }
 
     # Determine which provider to use based on the weighting
@@ -38,10 +38,25 @@ class Dev::SendMessagesController < ApplicationController
         message_id: message_id.to_s
       )
 
-      render json: { code: code_status, message_id: @new_message } if @new_message.save
+      render json: { code: code_status, message_id: @new_message.message_id } if @new_message.save
     elsif code_status == 500
       render json: { message: 'System is offline now. Please try later', code: code_status }
     end
+  end
+
+  def find_message_status
+    message_id = params[:message_id]
+    message = SendMessage.find_by(message_id:)
+
+    render json: { status: message.attempt_status, message_id: }
+  end
+
+  def find_message
+    message_id = params[:message_id]
+    message = SendMessage.find_by(message_id:)
+
+    render json: message,
+           only: %i[id to_number message attempt_status message_id uuid]
   end
 
   def delivery_status
@@ -50,9 +65,12 @@ class Dev::SendMessagesController < ApplicationController
     status = params[:status]
 
     message = SendMessage.find_by(message_id:)
+    if status.to_s == 'invalid'
+      @invalid_number = InvalidNumber.new(number: message.to_number)
+      @invalid_number.save
+    end
     message&.update(attempt_status: status)
 
-    puts message
     head :ok
   end
 

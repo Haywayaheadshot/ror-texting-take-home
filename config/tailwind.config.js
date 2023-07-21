@@ -13,10 +13,10 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
-  },
-  screens: {
-    // => @media (min-width: 1025px) { ... }
-    desktop: "1025px",
+    screens: {
+      // => @media (min-width: 1025px) { ... }
+      desktop: "1025px",
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
