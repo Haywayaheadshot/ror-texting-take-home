@@ -57,7 +57,7 @@ The **Send Messages API** allows you to send SMS messages using two different pr
 
 [Live Demo]() - Under Construction
 
-[Project Video]()
+[Project Video](https://www.youtube.com/watch?v=WHG2QBK6DtE)
 
 <!-- Features -->
 
