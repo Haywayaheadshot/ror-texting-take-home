@@ -18,7 +18,7 @@ This API does not require authentication for message sending and status retrieva
 
 **Endpoint:** `POST /provider_one`
 
-**Description:** Sends an SMS message using Provider One.
+**Description:** Sends an SMS message using both Providers.
 
 **Request Parameters:**
 
