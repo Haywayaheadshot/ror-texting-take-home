@@ -18,7 +18,7 @@ class SendMessagesController < ApplicationController
     payload = {
       to_number:,
       message:,
-      callback_url: 'https://e8cc-197-251-147-157.ngrok-free.app/delivery_status'
+      callback_url: 'https://dd90-181-214-93-162.ngrok-free.app/delivery_status'
     }
     provider_url = weighted_provider_url
     attempt = make_request_to_provider(MAIN_URL + provider_url, payload)
@@ -33,7 +33,10 @@ class SendMessagesController < ApplicationController
         attempt_status: '',
         message_id: message_id.to_s
       )
+
       @new_message.save
+
+      DeliveryStatusJob.perform(@new_message)
     elsif code_status == 500
       redirect_to root_path, notice: 'System is offline now. Please try again later!'
     end
