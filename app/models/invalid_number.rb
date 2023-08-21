@@ -1,0 +1,2 @@
+class InvalidNumber < ApplicationRecord
+end
